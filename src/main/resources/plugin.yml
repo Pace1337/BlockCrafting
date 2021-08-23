@@ -1,0 +1,6 @@
+name: CubeCrafting
+version: ${project.version}
+main: insurgence.network.blockcrafting.BlockCrafting
+api-version: 1.13
+authors: [ InsurgenceDevelopment ]
+website: https://discord.gg/D8YCGQa729
