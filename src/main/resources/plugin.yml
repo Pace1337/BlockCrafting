@@ -4,3 +4,6 @@ main: insurgence.network.blockcrafting.BlockCrafting
 api-version: 1.13
 authors: [ InsurgenceDevelopment ]
 website: https://discord.gg/D8YCGQa729
+commands:
+  craftreload:
+    description: Reload the crafting configuration.
