@@ -17,6 +17,7 @@ public class CraftReload implements CommandExecutor {
             // Be able to do /screload from console too.
             ConsoleCommandSender console = (ConsoleCommandSender) sender;
             BlockCrafting.getInstance().reloadConfiguration();
+            BlockCrafting.getInstance().getHandler().refresh();
             console.sendMessage(ChatColor.GREEN + "Config has been reloaded!");
             return true;
         }

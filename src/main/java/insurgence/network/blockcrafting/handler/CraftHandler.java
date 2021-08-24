@@ -1,7 +1,6 @@
 package insurgence.network.blockcrafting.handler;
 
 import insurgence.network.blockcrafting.BlockCrafting;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,6 +21,11 @@ public class CraftHandler implements Listener {
         (this.allBlockedTypes = new LinkedList<>()).addAll(instance.getConfig().getStringList("blocked"));
     }
 
+    public void refresh() {
+        this.allBlockedTypes.clear();
+        this.allBlockedTypes.addAll(BlockCrafting.getInstance().getConfig().getStringList("blocked"));
+    }
+
     @EventHandler
     void onCraft(final PrepareItemCraftEvent e) {
         Player player = (Player) e.getView().getPlayer();
@@ -36,6 +40,8 @@ public class CraftHandler implements Listener {
             a.setItemMeta(m);
             e.getInventory().setResult(a);
             player.updateInventory();
+            if (!BlockCrafting.getInstance().getConfig().getBoolean("chatmessage-enabled")) return;
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', BlockCrafting.getInstance().getConfig().getString("messages.chatmessage")));
         }
     }
 

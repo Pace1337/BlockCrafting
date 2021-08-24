@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>insurgence.network</groupId>
-    <artifactId>CubeCrafting</artifactId>
+    <artifactId>BlockCrafting</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>CubeCrafting</name>
+    <name>BlockCrafting</name>
 
     <properties>
         <java.version>1.8</java.version>

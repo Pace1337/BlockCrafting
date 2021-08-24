@@ -9,6 +9,7 @@ public final class BlockCrafting extends JavaPlugin {
 
     public static BlockCrafting instance = null;
     public static FileConfiguration config;
+    private CraftHandler handler;
 
     public void reloadConfiguration() {
         this.reloadConfig();
@@ -22,9 +23,14 @@ public final class BlockCrafting extends JavaPlugin {
         BlockCrafting.config.options().copyDefaults(true);
         this.saveDefaultConfig();
         getCommand("craftreload").setExecutor(new CraftReload());
-        this.getServer().getPluginManager().registerEvents(new CraftHandler(this), this);
+        this.getServer().getPluginManager().registerEvents(handler = new CraftHandler(this), this);
     }
+
     public static BlockCrafting getInstance() {
         return instance;
+    }
+
+    public CraftHandler getHandler() {
+        return this.handler;
     }
 }

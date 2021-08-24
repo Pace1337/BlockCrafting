@@ -2,5 +2,7 @@
 # /craftreload to reload config.
 messages:
   blockedmessage: "&cCrafting this item is blocked."
+  chatmessage: "&cYou can't craft that"
+chatmessage-enabled: false
 blocked:
   - 'STICK'
