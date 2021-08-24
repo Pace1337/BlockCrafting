@@ -44,7 +44,7 @@ public class CraftHandler implements Listener {
         ItemStack a = e.getRecipe().getResult();
         String typo = a.getType().name();
         if (allBlockedTypes.contains(typo)) {
-            e.getInventory().setResult(null);
+            e.setCancelled(true);
         }
     }
 }
