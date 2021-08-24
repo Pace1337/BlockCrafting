@@ -28,6 +28,7 @@ public class CraftReload implements CommandExecutor {
         }
         try {
             BlockCrafting.getInstance().reloadConfiguration();
+            BlockCrafting.getInstance().getHandler().refresh();
             sender.sendMessage(ChatColor.GREEN + "Config has been reloaded!");
         } catch (NullPointerException e) {
             sender.sendMessage(ChatColor.DARK_RED + "Error! Check console for more details.");
